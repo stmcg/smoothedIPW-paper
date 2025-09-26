@@ -4,18 +4,38 @@ This repository contains the code for the simulation study and data application 
 
 ## Simulation Study
 
-The folder `simulations` contains the code for the simulation study. Below is a description of the contents of this folder.
+The `simulations` folder contains all code related to the simulation study.
 
 ### Prerequisites
 
 The code requires the following R packages to be installed: 
 
-- **data.table** (1.16.0)
-- **doParallel** (version 1.0.17)
-- **doRNG** (version 1.8.6)
-- **foreach** (version 1.5.2)
-- **RColorBrewer** (version 1.1-3)
-- **scales** (version 1.3.0)
-- **xtable** (version 1.8-4)
+| Package      | Version |
+|-------------|---------|
+| data.table  | 1.16.0  |
+| doParallel  | 1.0.17  |
+| doRNG       | 1.8.6   |
+| foreach     | 1.5.2   |
+| RColorBrewer| 1.1-3   |
+| scales      | 1.3.0   |
+| xtable      | 1.8-4   |
 
 The package version numbers listed above were used in the analyses in the manuscript.
+
+### File Structure
+
+#### 1. Running simulations without Deaths
+
+The main files for running the simulations are:
+
+| File | Description | Approx. Runtime* |
+|------|------------|----------------|
+| `run-sims-null.R` | Null scenarios without deaths | 9 hours (parallelized across 20 CPU cores) |
+| `run-sims-nonnull.R` | Non-null scenarios without deaths | 4 hours (parallelized across 10 CPU cores) |
+| `run-sims-null-deaths.R` | Scenarios with deaths | 4 hours (parallelized across 10 CPU cores) |
+
+All simulation scripts rely on the helper file, ``run-sims-helper.R``. The simulation outputs are saved in the ``results`` folder.
+
+#### 2. Analyzing the simulation results
+
+The ``analyze-results.R`` file analyzes the results of the simulation studies generates all figures and tables reported in the manuscript.
