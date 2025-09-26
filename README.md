@@ -26,12 +26,14 @@ The package version numbers listed above were used in the analyses in the manusc
 
 The main files for running the simulations are:
 
-| File | Simulation Scenarios | Approx. Runtime* |
+| File | Simulation Scenarios | Approx. Runtime |
 |------|------------|----------------|
-| `run-sims-null.R` | Null scenarios without deaths | 9 hours (parallelized across 20 CPU cores) |
+| `run-sims-null.R` | Null scenarios without deaths | 4 hours (parallelized across 10 CPU cores) |
 | `run-sims-nonnull.R` | Non-null scenarios without deaths | 4 hours (parallelized across 10 CPU cores) |
-| `run-sims-null-deaths.R` | Scenarios with deaths | 4 hours (parallelized across 10 CPU cores) |
+| `run-sims-null-deaths.R` | Scenarios with deaths | 9 hours (parallelized across 20 CPU cores) |
 
-All simulation scripts rely on the helper file, ``run-sims-helper.R``. 
+All simulation scripts rely on the helper file, `sim-utils.R`. Also,
+-  `run-sims-null.R` and `run-sims-nonnull.R` additionally call `sim-runner.R`.
+-  `run-sims-null-deaths.R` additionally calls `sim-runner-deaths.R`.
 
-The ``analyze-results.R`` file analyzes the results of the simulation studies generates all figures and tables reported in the manuscript.
+The `analyze-results.R` file analyzes the results of the simulation studies and generates all figures and tables reported in the manuscript.
