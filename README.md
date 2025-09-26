@@ -1,4 +1,4 @@
-# Time-Smoothed Inverse Probability Weighted Estimation of Repeatedly Measured Outcomes
+# Time-Smoothed Inverse Probability Weighted Estimation
 
 This repository contains the code for the simulation study and data application in the manuscript "[Time-smoothed inverse probability weighted estimation of effects of generalized time-varying treatment strategies on repeated outcomes truncated by death](https://doi.org/10.48550/arXiv.2509.13971)" by Sean McGrath, Takuya Kawahara, Joshua Petimar, Sheryl L. Rifas-Shiman, Iván Díaz, Jason P. Block, and Jessica G. Young.
 
