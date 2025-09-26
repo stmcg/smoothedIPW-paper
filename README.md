@@ -22,7 +22,7 @@ The code requires the following R packages to be installed:
 
 The package version numbers listed above were used in the analyses in the manuscript.
 
-### Running the Simulations and Analyzing Results
+### Running Simulations and Analyzing Results
 
 The main files for running the simulations are:
 
