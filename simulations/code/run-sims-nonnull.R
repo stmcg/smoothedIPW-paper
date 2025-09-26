@@ -5,7 +5,7 @@ library('foreach')
 library('doRNG')
 library('doParallel')
 
-source('helper-functions-deaths.R')
+source('sim-utils.R')
 source('ipw-function.R')
 
 ################################################################################
@@ -92,6 +92,6 @@ R_model_denominator <- R ~ L + A + Z
 Y_model_pooled <- Y ~ L0 + time + Z
 Y_model_nonpooled <- Y ~ L0 * Z
 
-source('run-sims.R')
+source('sim-runner.R')
 
 save.image('../results/res-nonnull.RData')
