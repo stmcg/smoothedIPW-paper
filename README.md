@@ -1,6 +1,6 @@
 # Time-Smoothed Inverse Probability Weighted Estimation of Repeatedly Measured Outcomes
 
-This repository contains the code for the simulation study and data application in the manuscript ["Time-smoothed inverse probability weighted estimation of effects of generalized time-varying treatment strategies on repeated outcomes truncated by death"](https://doi.org/10.48550/arXiv.2509.13971) by Sean McGrath, Takuya Kawahara, Joshua Petimar, Sheryl L. Rifas-Shiman, Iván Díaz, Jason P. Block, and Jessica G. Young.
+This repository contains the code for the simulation study and data application in the manuscript "[Time-smoothed inverse probability weighted estimation of effects of generalized time-varying treatment strategies on repeated outcomes truncated by death](https://doi.org/10.48550/arXiv.2509.13971)" by Sean McGrath, Takuya Kawahara, Joshua Petimar, Sheryl L. Rifas-Shiman, Iván Díaz, Jason P. Block, and Jessica G. Young.
 
 ## Simulation Study
 
@@ -23,7 +23,7 @@ The code requires the following R packages to be installed:
 
 The package version numbers listed above were used in the analyses in the manuscript.
 
-### Running Simulations and Analyzing Results
+### Running the Simulations
 
 The main files for running the simulations are:
 
@@ -34,6 +34,7 @@ The main files for running the simulations are:
 | `run-sims-null-deaths.R` | Scenarios with deaths | 9 hours (parallelized across 20 CPU cores) |
 
 All simulation scripts rely on the helper file, `sim-utils.R`. Also,
+
 -  `run-sims-null.R` and `run-sims-nonnull.R` additionally call `sim-runner.R`.
 -  `run-sims-null-deaths.R` additionally calls `sim-runner-deaths.R`.
 
@@ -58,8 +59,9 @@ The package version numbers listed above were used in the analyses in the manusc
 ### Running the Data Application
 
 The data analysis can performed by the following steps:
+
 -  `data-processing.R`: Cleans the dataset.
 -  `descriptive-analyses.R`: Performs descriptive analyses of the analytic dataset.
--  `ipw-analyses.R`: Applying the inverse probability weighted estimators to the analytic dataset.
+-  `ipw-analyses.R`: Applies the inverse probability weighted estimators to the analytic dataset.
 
-The input dataset read into `data-processing.R` cannot be publicly shared. A data dictionary for this dataset is given in `dictionary.md`.
+*Note*: The input dataset read into `data-processing.R` cannot be publicly shared. A data dictionary for this dataset is given in `dictionary.md`.

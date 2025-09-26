@@ -3,6 +3,7 @@
 ################################################################################
 
 rm(list = ls())
+library('smoothedIPW')
 load('dat_cleaned.RData')
 
 covs_baseline <- c('age_t0', 'female', 'race_cat',
@@ -60,15 +61,6 @@ mycols <- c('id', 'time', 'Z', 'A', 'R', 'D', 'Y',
             covs_baseline, covs_tv, 'A_model_eligible', 'C_artificial')
 dat_reduced <- dat_reduced[, ..mycols]
 
-library('data.table')
-library('progress')
-library('splines')
-
-
-## Simple analysis: Removing individuals who died
-source('ipw.R')
-source('bootstrap.R')
-
 A_model <- as.formula(
   paste0('A ~ Z + time + I(time^2) + ',
          paste0(covs_baseline, collapse = ' + '),
@@ -89,7 +81,7 @@ Y_model_pooled <- as.formula(
 
 res_est_nonpooled <-
   ipw(data = dat_reduced,
-      pooled = FALSE,
+      time_smoothed = FALSE,
       outcome_times = c(5, 11, 17 ,23),
       A_model = A_model,
       R_model_numerator = R_model_numerator,
@@ -101,8 +93,8 @@ res_est_nonpooled <-
 
 res_est_nonstacked <-
   ipw(data = dat_reduced,
-      pooled = TRUE,
-      pooling_method = 'nonstacked',
+      time_smoothed = TRUE,
+      smoothing_method = 'nonstacked',
       outcome_times = c(5, 11, 17 ,23),
       A_model = A_model,
       R_model_numerator = R_model_numerator,
@@ -114,8 +106,8 @@ res_est_nonstacked <-
 
 res_est_stacked <-
   ipw(data = dat_reduced,
-      pooled = TRUE,
-      pooling_method = 'stacked',
+      time_smoothed = TRUE,
+      smoothing_method = 'stacked',
       outcome_times = c(5, 11, 17, 23),
       A_model = A_model,
       R_model_numerator = R_model_numerator,
@@ -202,6 +194,7 @@ hist(res_ci$res_boot_all[, 2, 2])
 
 rm(list = ls())
 load('dat_cleaned.RData')
+library('smoothedIPW')
 
 
 dat_reduced$Y <- as.factor(dat_reduced$wtchg_ge5_ind_t)
@@ -261,12 +254,6 @@ mycols <- c('id', 'time', 'Z', 'A', 'R', 'D', 'Y',
             covs_baseline, covs_tv, 'A_model_eligible', 'C_artificial')
 dat_reduced <- dat_reduced[, ..mycols]
 
-library('data.table')
-library('progress')
-library('splines')
-source('ipw.R')
-source('bootstrap.R')
-
 A_model <- as.formula(
   paste0('A ~ Z + time + I(time^2) + ',
          paste0(covs_baseline, collapse = ' + '),
@@ -287,7 +274,7 @@ Y_model_pooled <- as.formula(
 
 res_est_nonpooled <-
   ipw(data = dat_reduced,
-      pooled = FALSE,
+      time_smoothed = FALSE,
       outcome_times = c(5, 11, 17 ,23),
       A_model = A_model,
       R_model_numerator = R_model_numerator,
@@ -299,8 +286,8 @@ res_est_nonpooled <-
 
 res_est_nonstacked <-
   ipw(data = dat_reduced,
-      pooled = TRUE,
-      pooling_method = 'nonstacked',
+      time_smoothed = TRUE,
+      smoothing_method = 'nonstacked',
       outcome_times = c(5, 11, 17 ,23),
       A_model = A_model,
       R_model_numerator = R_model_numerator,
@@ -312,8 +299,8 @@ res_est_nonstacked <-
 
 res_est_stacked <-
   ipw(data = dat_reduced,
-      pooled = TRUE,
-      pooling_method = 'stacked',
+      time_smoothed = TRUE,
+      smoothing_method = 'stacked',
       outcome_times = c(5, 11, 17, 23),
       A_model = A_model,
       R_model_numerator = R_model_numerator,
