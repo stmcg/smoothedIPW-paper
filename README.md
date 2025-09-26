@@ -4,7 +4,7 @@ This repository contains the code for the simulation study and data application 
 
 ## Simulation Study
 
-The `simulations` folder contains all code related to the simulation study.
+The `simulations` folder contains all code and results related to the simulation study. The subfolder `code` contains all code and `results` contains all results.
 
 ### Prerequisites
 
@@ -22,9 +22,7 @@ The code requires the following R packages to be installed:
 
 The package version numbers listed above were used in the analyses in the manuscript.
 
-### File Structure
-
-#### 1. Running simulations without Deaths
+### Running the Simulations and Analyzing Results
 
 The main files for running the simulations are:
 
@@ -34,8 +32,6 @@ The main files for running the simulations are:
 | `run-sims-nonnull.R` | Non-null scenarios without deaths | 4 hours (parallelized across 10 CPU cores) |
 | `run-sims-null-deaths.R` | Scenarios with deaths | 4 hours (parallelized across 10 CPU cores) |
 
-All simulation scripts rely on the helper file, ``run-sims-helper.R``. The simulation outputs are saved in the ``results`` folder.
-
-#### 2. Analyzing the simulation results
+All simulation scripts rely on the helper file, ``run-sims-helper.R``. 
 
 The ``analyze-results.R`` file analyzes the results of the simulation studies generates all figures and tables reported in the manuscript.
