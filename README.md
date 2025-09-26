@@ -38,3 +38,28 @@ All simulation scripts rely on the helper file, `sim-utils.R`. Also,
 -  `run-sims-null-deaths.R` additionally calls `sim-runner-deaths.R`.
 
 The `analyze-results.R` file analyzes the results of the simulation studies and generates all figures and tables reported in the manuscript.
+
+## Data Application
+
+### Prerequisites
+
+The code requires the following R packages to be installed: 
+
+| Package      | Version |
+|-------------|---------|
+| data.table  | 1.14.2  |
+| haven       | 2.5.0   |
+| smoothedIPW | 0.1.0   |
+| table1      | 1.4.3   |
+| xtable      | 1.8-4   |
+
+The package version numbers listed above were used in the analyses in the manuscript.
+
+### Running the Data Application
+
+The data analysis can performed by the following steps:
+-  `data-processing.R`: Cleans the dataset.
+-  `descriptive-analyses.R`: Performs descriptive analyses of the analytic dataset.
+-  `ipw-analyses.R`: Applying the inverse probability weighted estimators to the analytic dataset.
+
+The input dataset read into `data-processing.R` cannot be publicly shared. A data dictionary for this dataset is given in `dictionary.pdf`.
