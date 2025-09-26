@@ -62,4 +62,4 @@ The data analysis can performed by the following steps:
 -  `descriptive-analyses.R`: Performs descriptive analyses of the analytic dataset.
 -  `ipw-analyses.R`: Applying the inverse probability weighted estimators to the analytic dataset.
 
-The input dataset read into `data-processing.R` cannot be publicly shared. A data dictionary for this dataset is given in `dictionary.pdf`.
+The input dataset read into `data-processing.R` cannot be publicly shared. A data dictionary for this dataset is given in `dictionary.md`.
