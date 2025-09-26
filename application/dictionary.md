@@ -50,7 +50,7 @@
 | `OtherDIAB_txlt15_t0`, `OtherDIAB_txlt15` | Other diabetes medication prescription <15 months ago at baseline (`_t0`) and follow-up |
 | `HTN_txlt15_t0`, `HTN_txlt15` | Antihypertensive prescription <15 months ago at baseline (`_t0`) and follow-up |
 | `t_otherrx` | Antidepressant prescription other than the initiated medication in current month |
-| `sum_encounter_t0_cat1`, `sum_encounter_t0_cat2`, `sum_encounter_t0_cat3`, `sum_encounter_t0_cat4`, `sum_encounter_cat1`, `sum_encounter_cat2`, `sum_encounter_cat3`, `sum_encounter_cat4` | Number of months with a healthcare encounter (last 6 months):<br>• Cat1: 0 months<br>• Cat2: 1–2 months<br>• Cat3: 3–4 months<br>• Cat4: 5–6 months |
+| `sum_encounter_t0_cat1`, `sum_encounter_t0_cat2`, `sum_encounter_t0_cat3`, `sum_encounter_t0_cat4`, `sum_encounter_cat1`, `sum_encounter_cat2`, `sum_encounter_cat3`, `sum_encounter_cat4` | Number of months with a healthcare encounter (last 6 months) at baseline (`_t0`) and follow-up:<br>• `cat1`: 0 months<br>• `cat2`: 1–2 months<br>• `cat3`: 3–4 months<br>• `cat4`: 5–6 months |
 
 ---
 
