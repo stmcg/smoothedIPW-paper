@@ -18,6 +18,7 @@ The code requires the following R packages to be installed:
 | foreach     | 1.5.2   |
 | RColorBrewer| 1.1-3   |
 | scales      | 1.3.0   |
+| smoothedIPW | 0.1.0   |
 | xtable      | 1.8-4   |
 
 The package version numbers listed above were used in the analyses in the manuscript.

@@ -11,21 +11,21 @@ results <- foreach(rep = 1:n_reps) %dorng% {
                      R_model_numerator = R_model_numerator,
                      R_model_denominator = R_model_denominator,
                      Y_model = Y_model_pooled,
-                     pooled = TRUE, pooling_method = 'stacked',
+                     time_smoothed = TRUE, smoothing_method = 'stacked',
                      outcome_times = outcome_times, 
                      data = df, return_model_fits = FALSE)
   res_nonstacked <- ipw(A_model = A_model,
                         R_model_numerator = R_model_numerator,
                         R_model_denominator = R_model_denominator,
                         Y_model = Y_model_pooled,
-                        pooled = TRUE, pooling_method = 'nonstacked',
+                        time_smoothed = TRUE, smoothing_method = 'nonstacked',
                         outcome_times = outcome_times, 
                         data = df, return_model_fits = FALSE)
   res_nonpooled <- ipw(A_model = A_model,
                        R_model_numerator = R_model_numerator,
                        R_model_denominator = R_model_denominator,
                        Y_model = Y_model_nonpooled,
-                       pooled = FALSE, 
+                       time_smoothed = FALSE, 
                        outcome_times = outcome_times, 
                        data = df, return_model_fits = FALSE)
   

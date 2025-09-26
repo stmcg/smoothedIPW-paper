@@ -4,9 +4,9 @@ library('data.table')
 library('foreach')
 library('doRNG')
 library('doParallel')
+library('smoothedIPW')
 
 source('sim-utils.R')
-source('ipw-function.R')
 
 ################################################################################
 ## Set Parameters

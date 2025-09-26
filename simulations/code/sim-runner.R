@@ -11,14 +11,14 @@ results <- foreach(rep = 1:n_reps) %dorng% {
                     R_model_numerator = R_model_numerator,
                     R_model_denominator = R_model_denominator,
                     Y_model = Y_model_pooled,
-                    pooled = TRUE, data = df,
+                    time_smoothed = TRUE, data = df,
                     outcome_times = outcome_times, 
                     return_model_fits = FALSE)
   res_nonpooled <- ipw(A_model = A_model,
                        R_model_numerator = R_model_numerator,
                        R_model_denominator = R_model_denominator,
                        Y_model = Y_model_nonpooled,
-                       pooled = FALSE, data = df,
+                       time_smoothed = FALSE, data = df,
                        outcome_times = outcome_times, 
                        return_model_fits = FALSE)
 
