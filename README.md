@@ -26,7 +26,7 @@ The package version numbers listed above were used in the analyses in the manusc
 
 The main files for running the simulations are:
 
-| File | Description | Approx. Runtime* |
+| File | Simulation Scenarios | Approx. Runtime* |
 |------|------------|----------------|
 | `run-sims-null.R` | Null scenarios without deaths | 9 hours (parallelized across 20 CPU cores) |
 | `run-sims-nonnull.R` | Non-null scenarios without deaths | 4 hours (parallelized across 10 CPU cores) |
